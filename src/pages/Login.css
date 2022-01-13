@@ -1,3 +1,35 @@
 ion-content{
     --ion-background-color:#079992;
 }
+
+.containerForm{
+    margin: 0 auto;
+    padding: 2em;
+    width: 400px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inputLogin{
+    align-self: flex-start;
+    background-color: white;
+    border-radius:5px;
+    margin: 1em 0 ;
+    color: grey;
+    text-align: left;
+}
+
+.buttonLogin{
+    width:336px;
+    --background:#2B2A2E;
+}
+.buttonRegisto{
+    width:336px;
+    --background:#27CDA5;
+}
+
+/* ion-button{
+    --ion-color-dark:#079992;
+} */
