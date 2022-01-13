@@ -1,0 +1,7 @@
+{
+  "name": "nowaste2021",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
