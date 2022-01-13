@@ -1,0 +1,31 @@
+.buttonLogin{
+    width:336px;
+    --background:#2B2A2E;
+}
+.buttonRegisto{
+    width:336px;
+    --background:#27CDA5;
+}
+
+.containerForm{
+    margin: 0 auto;
+    padding: 2em;
+    width: 400px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inputRegisto{
+    align-self: flex-start;
+    background-color: white;
+    border-radius:8px;
+    margin: 1em 0 ;
+    color: grey;
+    text-align: left;
+}
+
+.alert-wrapper.sc-ion-alert-md{
+    --background: #2B2A2E;
+  }
