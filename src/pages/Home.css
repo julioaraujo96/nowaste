@@ -26,20 +26,21 @@ ion-row {
     display: flex;
     justify-content: center;
 }
-
-.search {
+.search{
     text-align: center;
+    margin-top: 1em;
 }
-
-.search .search-bar{
-    --background: rgb(255, 255, 255);
+.searchbar-input.sc-ion-searchbar-md{
     margin-bottom: 20px;
-    margin-top: 20px;
+    background-color: white;
+    border-radius:8px;
+    color: grey;
+    text-align: left;
 }
 
-searchbar-input-container sc-ion-searchbar-ios {
+/* searchbar-input-container sc-ion-searchbar-ios {
     color: rgb(0, 0, 0);
-}
+} */
 
 ion-item {
     --background: #433B45;
@@ -60,5 +61,15 @@ ion-item {
     color:tomato;
 }
 
-
-
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    background-color:#39363A;
+    border-radius:8px;
+    width:100%;
+    padding: 1em;
+    margin:1em;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
