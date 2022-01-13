@@ -1,5 +1,5 @@
-.ionicon-fill-none {
-    fill: #18E5DC;
+.addcolor{
+    color: #18E5DC;
 }
 
 .pageTitle{
@@ -18,4 +18,9 @@
     margin: 0.5em 0 ;
     color: white;
     text-align: left;
+}
+
+.buttonCreate{
+    width:336px;
+    --background:#2B2A2E;
 }

@@ -2,6 +2,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonButton, IonRouterLink, Ion
 import { useState } from 'react';
 import axios from 'axios'
 import './AddAnuncio.css';
+import { info } from 'console';
 
 const Home: React.FC = () => {
 
@@ -9,29 +10,39 @@ const Home: React.FC = () => {
 
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [contacto, setContacto] = useState('');
   const [location, setLocation] = useState('');
 
   const [alerta] = useIonAlert();
 
-  const handleAddAnuncio = (userEmail: string, userPassword: string) => {
+  const handleAddAnuncio = (title: string, description: string, location:string) => {
+    if (title.length === 0 || description.length === 0 || location.length === 0) {
+      return alerta('Preencha todos os campos!', [{ text: 'Ok', handler: () => { window.location.reload()} }]);
+    }
     axios({
         method: "post",
-        url: API_URL + 'login',
+        url: API_URL + 'criar_anuncio',
         headers: {},
         data: {
-            email: userEmail.toLowerCase(),
-            password: userPassword,
+            token: localStorage.getItem('token'),
+            titulo: title,
+            descricao: description,
+            localizacao:location,
+            imagem:""
         },
     })
         .then(info => {
-            if (undefined != info.data.Token) {
-                localStorage.setItem("token", info.data.Token);
-                window.location.href = "/home";
-            } else {
-                alerta('O email ou a password estão errados! Por favor tente outra vez.', [{ text: 'Ok', handler: () => { window.location.reload() } }]);
-            }
-        })
+          if (info.data.Code === 400) {
+            localStorage.removeItem('token');
+            alerta('O token expirou!', [{ text: 'Ok', handler: () => { window.location.href = "/login" } }]);
+          }
+
+          if (info.data.Code === 200) {
+            alerta('O anúncio foi criado!', [{ text: 'Ok', handler: () => { window.location.href = "/home" } }]);
+          }
+          
+        }).catch(function (error) {
+          console.log(error);
+        });
 };
 
   return (
@@ -47,12 +58,13 @@ const Home: React.FC = () => {
           <IonText className="inputLabel">Descrição</IonText>
           <IonInput className="inputText" type="text" value={description} onIonChange={(e) => setDescription(e.detail.value!)} required />
 
-          <IonText className="inputLabel">Contacto</IonText>
-          <IonInput className="inputText" type="text" value={contacto} onIonChange={(e) => setContacto(e.detail.value!)} required />
-
           <IonText className="inputLabel">Localização</IonText>
           <IonInput className="inputText" type="text" value={location} onIonChange={(e) => setLocation(e.detail.value!)} required />
+          <IonRow>
+             <IonButton className="buttonCreate" type="submit"  onClick={() => handleAddAnuncio(title, description,location)}>Criar Anúncio</IonButton>
+          </IonRow>
         </div>
+        
       
       </IonContent>
     </IonPage>
