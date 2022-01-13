@@ -10,12 +10,13 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, triangle } from 'ionicons/icons';
+import { addCircleOutline, square, triangle } from 'ionicons/icons';
 import Home from './pages/Home';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
 import Login from './pages/Login';
 import Registo from './pages/Registo';
+import AddAnuncio from './pages/AddAnuncio';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -36,6 +37,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+
 setupIonicReact();
 
 const App: React.FC = () => (
@@ -46,8 +48,8 @@ const App: React.FC = () => (
           <Route exact path="/Home">
             <Home />
           </Route>
-          <Route exact path="/tab2">
-            <Tab2 />
+          <Route exact path="/criar_anuncio">
+            <AddAnuncio />
           </Route>
           <Route path="/tab3">
             <Tab3 />
@@ -58,9 +60,9 @@ const App: React.FC = () => (
             <IonIcon icon={triangle} />
             <IonLabel>Home</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon icon={ellipse} />
-            <IonLabel>Tab 2</IonLabel>
+          <IonTabButton tab="criar anuncio" href="/criar_anuncio">
+            <IonIcon icon={addCircleOutline}/>
+            <IonLabel>Criar Anúncio</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab3" href="/tab3">
             <IonIcon icon={square} />

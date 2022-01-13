@@ -1,0 +1,21 @@
+.ionicon-fill-none {
+    fill: #18E5DC;
+}
+
+.pageTitle{
+    background-color: #2B2A2E ;
+    padding: 0.8em;
+    margin-top: 0.5em;
+    text-align: center;
+}
+
+.inputLabel{
+   align-self: flex-start;
+}
+.inputText{
+    background-color: #0FAEA6;
+    border-radius:8px;
+    margin: 0.5em 0 ;
+    color: white;
+    text-align: left;
+}
