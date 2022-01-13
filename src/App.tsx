@@ -15,6 +15,7 @@ import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
 import Login from './pages/Login';
+import Registo from './pages/Registo';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -69,6 +70,9 @@ const App: React.FC = () => (
       </IonTabs>
       <Route path="/login">
             <Login />
+        </Route>
+      <Route path="/registo">
+            <Registo />
         </Route>
         <Route exact path="/">
             <Redirect to="/login" />

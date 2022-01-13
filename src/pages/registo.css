@@ -1,5 +1,10 @@
-ion-content{
-    --ion-background-color:#079992;
+.buttonLogin{
+    width:336px;
+    --background:#2B2A2E;
+}
+.buttonRegisto{
+    width:336px;
+    --background:#27CDA5;
 }
 
 .containerForm{
@@ -12,7 +17,7 @@ ion-content{
     flex-direction: column;
 }
 
-.inputLogin{
+.inputRegisto{
     align-self: flex-start;
     background-color: white;
     border-radius:8px;
@@ -21,15 +26,6 @@ ion-content{
     text-align: left;
 }
 
-.buttonLogin{
-    width:336px;
-    --background:#2B2A2E;
-}
-.buttonRegisto{
-    width:336px;
-    --background:#27CDA5;
-}
-
-/* ion-button{
-    --ion-color-dark:#079992;
-} */
+.alert-wrapper.sc-ion-alert-md{
+    --background: #2B2A2E;
+  }
