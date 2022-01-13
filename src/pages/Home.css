@@ -1,0 +1,32 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: white;
+}
+
+.img-sm{
+    width: 110px;
+}
+
+.logotext {
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.search {
+    text-align: center;
+}
+
+.search .search{
+    --background: rgb(255, 255, 255);
+}
+
+searchbar-input-container sc-ion-searchbar-ios {
+    color: rgb(0, 0, 0);
+}
+
+ion-item {
+    --background: #433B45;
+}
