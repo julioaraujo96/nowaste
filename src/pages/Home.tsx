@@ -9,12 +9,12 @@ const Home: React.FC = () => {
     <IonPage>
       <IonContent fullscreen>
         <div className="logotext">
-          <IonImg class="img-sm" src="./assets/logo.png"/>
+          <IonImg src="./assets/logo.png"/>
           <h1>NoWaste</h1>
         </div>
         <div className="search">
           <p>Bem Vindo, o que precisa?</p>
-          <IonSearchbar class="search" value={searchText} onIonChange={e => setSearchText(e.detail.value!)}></IonSearchbar>
+          <IonSearchbar class="search-bar" value={searchText} onIonChange={e => setSearchText(e.detail.value!)}></IonSearchbar>
         </div>
 
         <IonItem lines="none">
@@ -23,20 +23,26 @@ const Home: React.FC = () => {
             <h1>Items Disponíveis</h1>
             <IonRow>
               <IonCol size="6">
-                <IonImg class="img-sm" src="./assets/logo.png"/>
-                <p>Calculadora</p>
-                <p>Contactar</p>
+                <IonImg class="img-list" src="./assets/logo.png"/>
+                <p className='textImg'>Calculadora</p>
+                <p className='textContacto'>Contactar</p>
               </IonCol>
               <IonCol size="6">
-                ion-col
+                <IonImg class="img-list" src="./assets/logo.png"/>
+                <p className='textImg'>Calculadora</p>
+                <p className='textContacto'>Contactar</p>
               </IonCol>
             </IonRow>
             <IonRow>
               <IonCol size="6">
-                <IonImg class="img-sm" src="./assets/logo.png"/>
+                <IonImg class="img-list" src="./assets/logo.png"/>
+                <p className='textImg'>Calculadora</p>
+                <p className='textContacto'>Contactar</p>
               </IonCol>
               <IonCol size="6">
-                ion-col
+                <IonImg class="img-list" src="./assets/logo.png"/>
+                <p className='textImg'>Calculadora</p>
+                <p className='textContacto'>Contactar</p>
               </IonCol>
             </IonRow>
           </IonGrid>

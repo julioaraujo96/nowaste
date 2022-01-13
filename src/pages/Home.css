@@ -5,8 +5,20 @@
     color: white;
 }
 
-.img-sm{
-    width: 110px;
+p {
+    font-size: 20px;
+}
+
+ion-img {
+    display: inline-block;
+}
+
+ion-row {
+    text-align: center;
+}
+
+.logotext ion-img{
+    width: 190px;
 }
 
 .logotext {
@@ -19,8 +31,10 @@
     text-align: center;
 }
 
-.search .search{
+.search .search-bar{
     --background: rgb(255, 255, 255);
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 searchbar-input-container sc-ion-searchbar-ios {
@@ -30,3 +44,21 @@ searchbar-input-container sc-ion-searchbar-ios {
 ion-item {
     --background: #433B45;
 }
+
+.img-list {
+    width: 170px;
+    height: 170px;
+}
+
+.textImg {
+    margin-top: 10px;
+}
+
+.textContacto {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color:tomato;
+}
+
+
+
