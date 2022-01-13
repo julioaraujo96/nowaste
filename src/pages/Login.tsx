@@ -6,7 +6,7 @@ import './login.css';
 const Login: React.FC = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const API_URL = 'https://nowaste2021.herokuapp.com/';
+    const API_URL = 'dhttps://nowaste2021.herokuapp.com/';
     const [alerta] = useIonAlert();
 
     localStorage.removeItem("token");
