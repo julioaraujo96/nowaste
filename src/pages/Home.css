@@ -104,7 +104,6 @@ ion-item {
     cursor: pointer;
 }
 
-.addcolor{
-    margin-left: 1em;
-    color: #18E5DC;
+.spacing{
+    margin-right: 1em;
 }

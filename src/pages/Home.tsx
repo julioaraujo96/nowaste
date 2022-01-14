@@ -76,7 +76,7 @@ CallNumber.callNumber(contacto, true);
                                         <IonImg class="img-list" src="./assets/logo.png"/>
                                           <p className='textImg'>{item.titulo}</p>
                                           <p className='textImg'>Descrição: {item.descricao}</p>
-                                          <p className='textContacto' onClick={() => Call(910000000)}>Contactar<IonIcon className="addcolor"icon={call}/></p>
+                                          <p className='textContacto' onClick={() => Call(910000000)}><span className='spacing'>Contactar</span><IonIcon className="addcolor"icon={call}/></p>
                                           <p className='textData'>Criado em: <span className='textHigh'>{reverse(item.datacriacao)}</span></p>
                                           {/* <p className='textData'>Autor: <span className='textHigh'>{() => handleNome(item.id)} {autor}</span></p> */}
                                           <p className='textVer'>Ver anúncio</p>
