@@ -60,7 +60,29 @@ ion-item {
     margin-bottom: 10px;
     color:tomato;
 }
+.textData {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color:rgb(177, 173, 173);
+    font-size: 15px;
+}
+.textHigh {
+    color:#0FAEA6;
+}
+.textVer {
+    color:#ffffff;
+    padding: 0.3em;
+    font-size:15px;    
+    background-color:#0FAEA6;
+}
+.textVer:hover{
+    cursor: pointer;
 
+}
+.removeColor{
+    margin-left: 15px;
+    color: #ffffff;
+}
 .wrapper{
     display: flex;
     flex-wrap: wrap;
@@ -68,8 +90,14 @@ ion-item {
 .card{
     background-color:#39363A;
     border-radius:8px;
+    text-align: center;
     width:100%;
     padding: 1em;
     margin:1em;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.card:hover{
+    background-color:#474548;
+    cursor: pointer;
 }

@@ -1,6 +1,8 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonImg, IonSearchbar, IonGrid, IonRow, IonCol, IonCard, IonItem } from '@ionic/react';
+import { IonContent, IonHeader,   IonIcon,IonPage, IonTitle, IonToolbar, IonImg, IonSearchbar, IonGrid, IonRow, IonCol, IonCard, IonItem } from '@ionic/react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { CallNumber } from '@awesome-cordova-plugins/call-number';
+import { trash } from 'ionicons/icons';
 import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
 
@@ -8,6 +10,7 @@ const Home: React.FC = () => {
   const [searchText, setSearchText] = useState('');
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<any[]>([])
+  //const API_URL = 'https://nowaste2021.herokuapp.com/';
 
   useEffect(() => {
     const fetchData = async () =>{
@@ -15,6 +18,7 @@ const Home: React.FC = () => {
       try {
         const {data: response} = await axios.get('https://nowaste2021.herokuapp.com/anuncios');
         setData(response);
+        console.log(response);
       } catch (error) {
         console.error(error);
       }
@@ -22,18 +26,16 @@ const Home: React.FC = () => {
     };
     fetchData();
   }, []);
-    //   axios.get('https://nowaste2021.herokuapp.com/anuncios').then(resp => {
+  
 
-    //     console.log(resp.data);
-    
-    //   listItems = 
-    //  resp.data.map((d:any) =>    
-    //  <IonCol key={d.key} >
-    //   <IonImg class="img-list" src="./assets/logo.png"/>
-    //   <p className='textImg'>{d.datacriacao}</p>
-    //   <p className='textContacto'>Contactar</p>
-    // </IonCol>);
-    //   });
+  function reverse(s:string){
+    return s.split('-').reverse().join('-');
+}
+
+function Call(contacto:any)
+{
+CallNumber.callNumber(contacto, true);
+}
 
   return (
     <IonPage>
@@ -53,11 +55,13 @@ const Home: React.FC = () => {
             {loading && <div>Loading</div>}
             {!loading && (
                 <div className="wrapper" >
-                  {data.map(item => (<div  className="card" key={item.key} >
-       <IonImg class="img-list" src="./assets/logo.png"/>
-        <p className='textImg'>{item.descricao}</p>
-        <p className='textContacto'>Contactar</p>
-      </div>))}
+                  {data.map(item => (<div  className="card" key={item.id} >
+                                        <IonImg class="img-list" src="./assets/logo.png"/>
+                                          <p className='textImg'>{item.descricao}</p>
+                                          <p className='textContacto' onClick={() => Call(910000000)}>Contactar</p>
+                                          <p className='textData'>Criado em: <span className='textHigh'>{reverse(item.datacriacao)}</span></p>
+                                          <p className='textVer'>Ver anúncio</p>
+                                      </div>))}
                 </div>
             )}
         </IonGrid>
