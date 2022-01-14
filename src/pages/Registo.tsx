@@ -28,7 +28,7 @@ const Registo: React.FC = () => {
             return alerta('Por favor, escolha uma password que contenha no mínimo 8 carateres, entre estes letras e números.', [{ text: 'Ok' }]);
         }
         else if (!funcUserNumber) {
-            return alerta('Introduza um código-postal váido!', [{ text: 'Ok' }]);
+            return alerta('Introduza um contacto válido!', [{ text: 'Ok' }]);
         }
         else {
             axios({

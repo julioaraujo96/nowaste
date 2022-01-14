@@ -95,3 +95,14 @@ a{
 .marginText{
     margin-left: 1em;
 }
+
+.inputContacto{
+    height: 1em !important;
+    width: 80%;
+    background-color: white;
+    border-radius:8px;
+    margin: 1em auto ;
+    color: grey;
+    text-align: left;
+    --height: 1em!important; 
+}

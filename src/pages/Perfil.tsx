@@ -80,6 +80,10 @@ const Perfil: React.FC = () => {
       )}
 
   const handleEditarContacto = (contacto: string) => {
+
+    if (contacto.length !== 9 ) {
+     return  alerta('O contacto não tem 9 digitos!', [{ text: 'ok', handler: () => { setShowModal(false);} }]);
+    }
     axios({
       method: "post",
       url: API_URL + 'atualizar_utilizador',
@@ -126,7 +130,7 @@ const Perfil: React.FC = () => {
 
           swipeToClose={true}
           onDidDismiss={() => setShowModal(false)}>
-                    <IonInput className="inputLogin" type="text" placeholder="Novo contacto" value={contacto} onIonChange={(e) => setContacto(e.detail.value!)} required />
+                    <IonInput className="inputContacto" type="text" placeholder="Novo contacto" value={contacto} onIonChange={(e) => setContacto(e.detail.value!)} required />
                     <IonRow>
                         <IonButton className="buttonLogin" type="submit" onClick={() => handleEditarContacto(contacto)}>Editar Contacto</IonButton>
                     </IonRow>
