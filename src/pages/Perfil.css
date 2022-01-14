@@ -4,9 +4,10 @@ ion-tab-bar {
 
 .pageTitle{
     background-color: #2B2A2E ;
-    padding: 0.8em;
-    margin-top: 0.5em;
+    padding: 1em;
+    margin: 0.5em 0;
     text-align: center;
+    height: 1em;
 }
 
 .info-perfil {
@@ -45,13 +46,13 @@ ion-tab-bar {
 }
 
 .anuncios {
+    background-color:#39363A;
+    border-radius:12px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    background: #39363A;
-    margin-top: 20px;
-    padding: 10px;
-    border-radius: 10%;
+    width:100%;
+    padding: 1em;
+    margin:1em;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 a{
@@ -67,4 +68,15 @@ a{
 
 .anuncios p {
     padding-top: 10px;
+}
+
+.textClose {
+    color:#ffffff;
+    border-radius: 8px;
+    padding: 0.3em;
+    font-size:15px;    
+    background-color:#ed2626;
+}
+.textClose:hover{
+    cursor: pointer;
 }

@@ -52,7 +52,7 @@ const Home: React.FC = () => {
         <div className="container containerForm">
           {/* <IonImg src="./assets/logo.png"/>
           <h1>NoWaste</h1> */}
-          <IonText className="inputLabel">Título</IonText>
+          <IonText className="inputLabel extra">Título</IonText>
           <IonInput className="inputText" type="text" value={title} onIonChange={(e) => setTitle(e.detail.value!)} required />
 
           <IonText className="inputLabel">Descrição</IonText>

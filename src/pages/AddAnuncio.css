@@ -4,9 +4,13 @@
 
 .pageTitle{
     background-color: #2B2A2E ;
-    padding: 0.8em;
-    margin-top: 0.5em;
+    padding: 1em;
+    margin: 0.5em 0;
     text-align: center;
+    height: 1em;
+}
+.extra{
+    margin-top: 5em;
 }
 
 .inputLabel{
@@ -21,6 +25,7 @@
 }
 
 .buttonCreate{
+    margin-top: 1em;
     width:336px;
     --background:#2B2A2E;
 }

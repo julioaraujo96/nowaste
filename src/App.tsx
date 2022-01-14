@@ -12,8 +12,7 @@ import {
 import { IonReactRouter } from '@ionic/react-router';
 import { addCircle, home, person } from 'ionicons/icons';
 import Home from './pages/Home';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
+import Perfil from './pages/Perfil';
 import Login from './pages/Login';
 import Registo from './pages/Registo';
 import AddAnuncio from './pages/AddAnuncio';
@@ -51,8 +50,8 @@ const App: React.FC = () => (
           <Route exact path="/criar_anuncio">
             <AddAnuncio />
           </Route>
-          <Route path="/tab3">
-            <Tab3 />
+          <Route path="/meu_perfil">
+            <Perfil />
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
@@ -64,7 +63,7 @@ const App: React.FC = () => (
             <IonIcon className="addcolor"icon={addCircle}/>
             <IonLabel>Criar Anúncio</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
+          <IonTabButton tab="meu_perfil" href="/meu_perfil">
             <IonIcon icon={person} />
             <IonLabel>Perfil</IonLabel>
           </IonTabButton>
