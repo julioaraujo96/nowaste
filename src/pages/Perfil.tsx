@@ -1,16 +1,18 @@
-import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonIcon, IonImg, IonItem, IonLabel, IonPage, IonTitle, IonToolbar, iosTransitionAnimation, useIonAlert } from '@ionic/react';
+import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonIcon, IonImg, IonInput, IonItem, IonLabel, IonModal, IonPage, IonRow, IonTitle, IonToolbar, iosTransitionAnimation, useIonAlert } from '@ionic/react';
 import { pin } from 'ionicons/icons';
 import ExploreContainer from '../components/ExploreContainer';
 import './Perfil.css';
 import { CallNumber } from '@awesome-cordova-plugins/call-number';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { trash , call} from 'ionicons/icons';
+import { trash , call, create} from 'ionicons/icons';
 
 const Perfil: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<any>([])
   const [anunciodata, setAnuncioData] = useState<any>([])
+  const [showModal, setShowModal] = useState(false);
+  const [contacto, setContacto] = useState('');
   const [alerta] = useIonAlert();
 
   const API_URL = 'https://nowaste2021.herokuapp.com/';
@@ -77,6 +79,24 @@ const Perfil: React.FC = () => {
   }
       )}
 
+  const handleEditarContacto = (contacto: string) => {
+    axios({
+      method: "post",
+      url: API_URL + 'atualizar_utilizador',
+      headers: {},
+      data: {
+         token:localStorage.getItem('token'),
+         contacto:parseInt(contacto)
+      },
+  })
+      .then(info => {
+       if (info.status === 200) {
+         setShowModal(false);
+        alerta('O contacto foi alterado!', [{ text: info.statusText, handler: () => { window.location.reload()} }]);
+       }
+  }
+      )}
+
       function Call(contacto:any)
       {
       CallNumber.callNumber(contacto, true);
@@ -98,7 +118,19 @@ const Perfil: React.FC = () => {
           <div className='container-contactos'>
             <p>Contacto</p>
             <p className="textHigh space" onClick={() => Call(data.contacto)}>{loading ? 'loading...' : data?.contacto} <IonIcon className="addcolor"icon={call}/></p>
+            <p className="textData space textEdit" onClick={() => setShowModal(true)}>Editar<IonIcon className="addcolor marginText"icon={create}/></p>
           </div>
+
+          <IonModal
+          isOpen={showModal}
+
+          swipeToClose={true}
+          onDidDismiss={() => setShowModal(false)}>
+                    <IonInput className="inputLogin" type="text" placeholder="Novo contacto" value={contacto} onIonChange={(e) => setContacto(e.detail.value!)} required />
+                    <IonRow>
+                        <IonButton className="buttonLogin" type="submit" onClick={() => handleEditarContacto(contacto)}>Editar Contacto</IonButton>
+                    </IonRow>
+        </IonModal>
 
           <div className='container-ultimosanuncios'>
             <h1>Últimos Anúncios</h1>

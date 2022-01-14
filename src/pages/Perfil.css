@@ -84,3 +84,14 @@ a{
 .textClose:hover{
     cursor: pointer;
 }
+
+.textEdit{
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 1em;
+    background-color:rgb(77, 75, 75);
+}
+
+.marginText{
+    margin-left: 1em;
+}
