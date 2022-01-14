@@ -38,7 +38,6 @@ const  Call = async (contacto:any, id:number) =>
 {
   try {
     const data =  await axios.post('https://nowaste2021.herokuapp.com/consultar_perfil',{id:id});
-    console.log(data.data);
     setNumero(data.data.contacto);
     setAutor(data.data.nome)
   } catch (error) {
@@ -48,16 +47,16 @@ const  Call = async (contacto:any, id:number) =>
   CallNumber.callNumber(numero ? numero.toString() : '91000', true);
 }
 
-const  handleNome = async ( id:number) =>
-{
-  try {
-    const data =  await axios.post('https://nowaste2021.herokuapp.com/consultar_perfil',{id:id});
-    console.log(data.data);
-    setAutor(data.data.nome)
-  } catch (error) {
-    console.error(error);
-  }
-}
+// const  handleNome = async ( id:number) =>
+// {
+//   try {
+//     const data =  await axios.post('https://nowaste2021.herokuapp.com/consultar_perfil',{id:id});
+//     console.log(data.data);
+//     setAutor(data.data.nome)
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
 
   return (
     <IonPage>
@@ -81,10 +80,11 @@ const  handleNome = async ( id:number) =>
                                         <IonImg class="img-list" src="./assets/logo.png"/>
                                           <p className='textImg'>{item.titulo}</p>
                                           <p className='textImg'>Descrição: {item.descricao}</p>
-                                          <p className='textContacto' onClick={() => Call(item.contacto,item.id)}><span className='spacing'>Contactar</span><IonIcon className="addcolor"icon={call}/></p>
+                                          <p className='textImg'>Localização: {item.localizacao}</p>
+                                          <p className='textContacto' onClick={() => Call(item.contacto,item.utilizador_id)}><span className='spacing'>Contactar</span><IonIcon className="addcolor"icon={call}/></p>
                                           <p className='textData'>Criado em: <span className='textHigh'>{reverse(item.datacriacao)}</span></p>
-                                          <p className='textData'>Autor: <span className='textHigh' >{autor ? autor : 'Ver Autor'}</span></p> 
-                                          <p className='textVer'onClick={() => handleNome(item.id)}>Ver Anúncio</p>
+                                          <p className='textData'>Autor: <span className='textHigh' >{autor ? autor : 'Ver Autor'}</span></p>
+                                          <p className='textVer'>Ver Anúncio</p>
                                       </div>))}
                 </div>
             )}
