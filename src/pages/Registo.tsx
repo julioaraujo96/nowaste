@@ -66,10 +66,10 @@ const Registo: React.FC = () => {
                     <IonInput className="inputRegisto" placeholder="Confirmar Password" type="password" value={userPasswordConf} onIonChange={(e) => setUserPasswordConf(e.detail.value!)} required />
                     <IonInput className="inputRegisto" placeholder="Contacto" type="number" value={contacto} onIonChange={(e) => setContacto(e.detail.value!)} required />
                     <IonRow>
-                        <IonButton className="buttonRegisto" type="submit" onClick={() => Registo(name, userEmail, userPassword, userPasswordConf, contacto)}>Registar</IonButton>
+                        <IonButton className="buttonLogin" type="submit" onClick={() => Registo(name, userEmail, userPassword, userPasswordConf, contacto)}>Registar</IonButton>
                     </IonRow>
                     <IonRow>
-                        <IonButton className="buttonLogin" type="button" href="./login">Login</IonButton>
+                        <IonButton className="buttonRegisto" type="button" href="./login">Login</IonButton>
                     </IonRow>
                 </div>
             </IonContent>

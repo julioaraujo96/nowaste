@@ -1,12 +1,3 @@
-.buttonLogin{
-    width:336px;
-    --background:#2B2A2E;
-    margin-top: 1em;
-}
-.buttonRegisto{
-    width:336px;
-    --background:#27CDA5;
-}
 
 .containerForm{
     margin: 0 auto;
