@@ -34,7 +34,7 @@ const Login: React.FC = () => {
     return (
         <IonPage>
             <IonContent fullscreen>
-                <div className="container containerForm">
+                <div className="container">
                     <h1 className="titleLogin">Login</h1>
                     <IonInput className="inputLogin" type="text" placeholder="Email" value={email} onIonChange={(e) => setEmail(e.detail.value!)} required />
                     <IonInput className="inputLogin" type="password" placeholder="Password" value={password} onIonChange={(e) => setPassword(e.detail.value!)} required />

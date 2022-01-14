@@ -2,13 +2,14 @@ import { IonContent, IonHeader,   IonIcon,IonPage, IonTitle, IonToolbar, IonImg,
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { CallNumber } from '@awesome-cordova-plugins/call-number';
-import { trash } from 'ionicons/icons';
+import { call } from 'ionicons/icons';
 import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
 
 const Home: React.FC = () => {
   const [searchText, setSearchText] = useState('');
   const [loading, setLoading] = useState(true);
+  //const [autor, setAutor] = useState<any[]>([])
   const [data, setData] = useState<any[]>([])
   //const API_URL = 'https://nowaste2021.herokuapp.com/';
 
@@ -37,6 +38,22 @@ function Call(contacto:any)
 CallNumber.callNumber(contacto, true);
 }
 
+// const handleNome = (id:number) => {
+//   const fetchData = async () =>{
+//     setLoading(true);
+//     try {
+//       const {data: response} = await axios.post('https://nowaste2021.herokuapp.com/consultar_perfil',{id:id});
+//       setAutor(response);
+//       console.log(response);
+//     } catch (error) {
+//       console.error(error);
+     
+//     }
+//     setLoading(false);
+//   };
+//   fetchData();
+// }
+
   return (
     <IonPage>
       <IonContent fullscreen>
@@ -57,9 +74,11 @@ CallNumber.callNumber(contacto, true);
                 <div className="wrapper" >
                   {data.map(item => (<div  className="card" key={item.id} >
                                         <IonImg class="img-list" src="./assets/logo.png"/>
-                                          <p className='textImg'>{item.descricao}</p>
-                                          <p className='textContacto' onClick={() => Call(910000000)}>Contactar</p>
+                                          <p className='textImg'>{item.titulo}</p>
+                                          <p className='textImg'>Descrição: {item.descricao}</p>
+                                          <p className='textContacto' onClick={() => Call(910000000)}>Contactar<IonIcon className="addcolor"icon={call}/></p>
                                           <p className='textData'>Criado em: <span className='textHigh'>{reverse(item.datacriacao)}</span></p>
+                                          {/* <p className='textData'>Autor: <span className='textHigh'>{() => handleNome(item.id)} {autor}</span></p> */}
                                           <p className='textVer'>Ver anúncio</p>
                                       </div>))}
                 </div>

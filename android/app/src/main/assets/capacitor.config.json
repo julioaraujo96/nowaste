@@ -1,0 +1,6 @@
+{
+	"appId": "com.example.app",
+	"appName": "nowaste2021",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}

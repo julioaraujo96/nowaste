@@ -18,14 +18,15 @@
 }
 .inputText{
     background-color: #0FAEA6;
+    width: 80%;
     border-radius:8px;
-    margin: 0.5em 0 ;
+    margin: 2em auto ;
     color: white;
     text-align: left;
 }
 
 .buttonCreate{
-    margin-top: 1em;
-    width:336px;
+    margin: 1em auto;
+    width:80% !important;
     --background:#2B2A2E;
 }

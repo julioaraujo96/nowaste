@@ -5,7 +5,7 @@ import './Perfil.css';
 import { CallNumber } from '@awesome-cordova-plugins/call-number';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { trash } from 'ionicons/icons';
+import { trash , call} from 'ionicons/icons';
 
 const Perfil: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -89,7 +89,7 @@ const Perfil: React.FC = () => {
     <IonPage>
       <IonContent fullscreen>
           <IonTitle className="pageTitle">Perfil</IonTitle>
-        <div className="container containerForm">
+        <div className="container">
           <div className="info-perfil">
             <img src="./assets/logo.png" alt="Perfil"></img>
             <h1>{loading ? 'loading...' : data?.nome}</h1>   
@@ -97,7 +97,7 @@ const Perfil: React.FC = () => {
 
           <div className='container-contactos'>
             <p>Contacto</p>
-            <p onClick={() => Call(data.contacto)}>{loading ? 'loading...' : data?.contacto}</p>
+            <p className="textHigh space" onClick={() => Call(data.contacto)}>{loading ? 'loading...' : data?.contacto} <IonIcon className="addcolor"icon={call}/></p>
           </div>
 
           <div className='container-ultimosanuncios'>

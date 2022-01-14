@@ -49,21 +49,19 @@ const Home: React.FC = () => {
     <IonPage>
       <IonContent fullscreen>
           <IonTitle className="pageTitle">Criar Anúncio</IonTitle>
-        <div className="container containerForm">
+        <div className="container">
           {/* <IonImg src="./assets/logo.png"/>
           <h1>NoWaste</h1> */}
-          <IonText className="inputLabel extra">Título</IonText>
-          <IonInput className="inputText" type="text" value={title} onIonChange={(e) => setTitle(e.detail.value!)} required />
+            <IonInput className="inputText" type="text" placeholder="titulo" value={title} onIonChange={(e) => setTitle(e.detail.value!)} required />
 
-          <IonText className="inputLabel">Descrição</IonText>
-          <IonInput className="inputText" type="text" value={description} onIonChange={(e) => setDescription(e.detail.value!)} required />
+            <IonInput className="inputText" type="text" placeholder="descrição" value={description} onIonChange={(e) => setDescription(e.detail.value!)} required />
 
-          <IonText className="inputLabel">Localização</IonText>
-          <IonInput className="inputText" type="text" value={location} onIonChange={(e) => setLocation(e.detail.value!)} required />
-          <IonRow>
-             <IonButton className="buttonCreate" type="submit"  onClick={() => handleAddAnuncio(title, description,location)}>Criar Anúncio</IonButton>
-          </IonRow>
-        </div>
+            <IonInput className="inputText" type="text" placeholder="localização" value={location} onIonChange={(e) => setLocation(e.detail.value!)} required />
+            <IonRow>
+              <IonButton className="buttonCreate" type="submit"  onClick={() => handleAddAnuncio(title, description,location)}>Criar Anúncio</IonButton>
+            </IonRow>
+          </div>
+         
         
       
       </IonContent>

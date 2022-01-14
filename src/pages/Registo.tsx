@@ -58,7 +58,7 @@ const Registo: React.FC = () => {
     return (
         <IonPage>
             <IonContent fullscreen>
-                <div className="container containerForm">
+                <div className="container">
                     <h1 className="titleRegisto">Registo</h1>
                     <IonInput className="inputRegisto" placeholder="Nome" type="text" value={name} onIonChange={(e) => setName(e.detail.value!)} required />
                     <IonInput className="inputRegisto" placeholder="Email"type="text" value={userEmail} onIonChange={(e) => setUserEmail(e.detail.value!)} required />
