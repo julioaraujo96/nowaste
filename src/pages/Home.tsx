@@ -28,7 +28,7 @@ const Home: React.FC = () => {
     };
     fetchData();
   }, []);
-  
+
 
   function reverse(s:string){
     return s.split('-').reverse().join('-');
@@ -39,20 +39,21 @@ const  Call = async (contacto:any, id:number) =>
   try {
     const data =  await axios.post('https://nowaste2021.herokuapp.com/consultar_perfil',{id:id});
     setNumero(data.data.contacto);
-    setAutor(data.data.nome)
+    // setAutor(data.data.nome)
+    console.log(data.data.contacto)
+    CallNumber.callNumber(data.data.contacto ? data.data.contacto : '91000', true);
   } catch (error) {
     console.error(error);
   }
-  console.log(numero)
-  CallNumber.callNumber(numero ? numero.toString() : '91000', true);
 }
 
 // const  handleNome = async ( id:number) =>
 // {
 //   try {
 //     const data =  await axios.post('https://nowaste2021.herokuapp.com/consultar_perfil',{id:id});
-//     console.log(data.data);
-//     setAutor(data.data.nome)
+//     if (data.data.id === id ) {
+//       setAutor(data.data.nome)
+//     }
 //   } catch (error) {
 //     console.error(error);
 //   }
@@ -83,7 +84,6 @@ const  Call = async (contacto:any, id:number) =>
                                           <p className='textImg'>Localização: {item.localizacao}</p>
                                           <p className='textContacto' onClick={() => Call(item.contacto,item.utilizador_id)}><span className='spacing'>Contactar</span><IonIcon className="addcolor"icon={call}/></p>
                                           <p className='textData'>Criado em: <span className='textHigh'>{reverse(item.datacriacao)}</span></p>
-                                          <p className='textData'>Autor: <span className='textHigh' >{autor ? autor : 'Ver Autor'}</span></p>
                                           <p className='textVer'>Ver Anúncio</p>
                                       </div>))}
                 </div>
@@ -91,7 +91,7 @@ const  Call = async (contacto:any, id:number) =>
         </IonGrid>
 
         </IonItem>
-      
+
       </IonContent>
     </IonPage>
   );
