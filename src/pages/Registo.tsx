@@ -24,7 +24,7 @@ const Registo: React.FC = () => {
         else if (funcUserPw != funcUserPw2) {
             return alerta('Introduza passwords correspondentes!', [{ text: 'Ok' }]);
         }
-        else if (!funcUserPw) {
+        else if (!funcUserPw.match(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{5,}$/)) {
             return alerta('Por favor, escolha uma password que contenha no mínimo 8 carateres, entre estes letras e números.', [{ text: 'Ok' }]);
         }
         else if (!funcUserNumber) {
