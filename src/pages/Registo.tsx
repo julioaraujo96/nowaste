@@ -45,9 +45,6 @@ const Registo: React.FC = () => {
                     alerta('Registo bem efetuado!', [{ text: 'Ok' }])
                     setInterval(window.location.href = "/login", 1000)
                 }
-                else if (info.data["Erro"].includes("duplicate key value violates unique constraint")) {
-                    alerta('Estes dados já estão registados, por favor faça login!', [{ text: 'Ok' }])
-                }
                 else {
                     alerta('Algo correu mal!', [{ text: 'Ok' }])
                 }

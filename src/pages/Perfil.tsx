@@ -73,7 +73,7 @@ const Perfil: React.FC = () => {
   })
       .then(info => {
        if (info.status === 200) {
-        alerta('O anúncio foi apagado!', [{ text: info.statusText, handler: () => { window.location.href = "/home" } }]);
+        alerta('O anúncio foi apagado!', [{ text: info.statusText, handler: () => { window.location.reload()} }]);
          handleAnuncios()
        }
   }
